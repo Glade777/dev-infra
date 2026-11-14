@@ -35,7 +35,7 @@ and Docker Compose are not required for local development.
 3. Start the backend directly with Maven:
 
    ```bash
-   ./mvnw spring-boot:run
+   mvn spring-boot:run
    ```
 
    The API starts at `http://localhost:8080`. Hibernate uses
@@ -44,7 +44,7 @@ and Docker Compose are not required for local development.
 4. Build the executable JAR when needed:
 
    ```bash
-   ./mvnw clean package
+   mvn clean package
    java -jar target/task-manager-0.0.1-SNAPSHOT.jar
    ```
 
@@ -73,7 +73,7 @@ curl http://localhost:8080/api/tasks
 Run the automated tests with Maven:
 
 ```bash
-./mvnw test
+mvn test
 ```
 
 ## API
@@ -111,7 +111,7 @@ provided only as an optional deployment artifact. Build the application first,
 then build and run the image if Docker is available:
 
 ```bash
-./mvnw clean package
+mvn clean package
 docker build -t task-manager .
 docker run --rm -p 8080:8080 \
   -e DB_HOST=host.docker.internal \
