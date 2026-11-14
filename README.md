@@ -121,3 +121,17 @@ docker run --rm -p 8080:8080 \
   -e DB_PASSWORD=your_mysql_password \
   task-manager
 ```
+
+## Deploy to Tomcat 10.1
+
+The project is configured as a WAR for external Tomcat deployment. Build it
+with Maven:
+
+```bash
+mvn clean package -DskipTests
+```
+
+Deploy `target/task-manager-1.0.war` to Tomcat 10.1's `webapps` directory.
+Spring Boot 3 uses Jakarta Servlet APIs, so use Tomcat 10.1 rather than the
+older Tomcat 9 or Tomcat 10.0 lines. Configure the `DB_*` environment
+variables for the Tomcat process before starting the server.
