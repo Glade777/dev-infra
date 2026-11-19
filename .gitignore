@@ -1,10 +1,12 @@
-# Maven build output
-target/
-
 # Local environment files
 .env
 .env.*
 !.env.example
+
+# Build outputs & dependencies
+backend/target/
+frontend/node_modules/
+frontend/dist/
 
 # IDE metadata
 .idea/
@@ -13,7 +15,7 @@ target/
 *.swp
 *.swo
 
-# Java and application logs
+# Java and logs
 *.class
 *.log
 hs_err_pid*
