@@ -66,12 +66,16 @@ services:
       - "3000:3000"
     volumes:
       - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - grafana-data:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     networks:
       - app-network
 
+volumes:
+    grafana-data:
+
 networks:
-  app-network:
-    name: team2_devops2026_app-network
-    external: true
+    app-network:
+      name: team2_devops2026_app-network
+      external: true
